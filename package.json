@@ -1,0 +1,23 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/FasTrss/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/FasTrss/frontend-project-44/actions)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FasTrss/frontend-project-44.git"
+  },
+  "author": "FasTrss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FasTrss/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/FasTrss/frontend-project-44#readme",
+  "bin": {
+    "code": "bin/brain-games.js"
+  }
+}
