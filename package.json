@@ -1,5 +1,5 @@
 {
-  "name": "@hexlet/code",
+  "name": "q",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/FasTrss/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/FasTrss/frontend-project-44/actions)",
   "type": "module",
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/FasTrss/frontend-project-44#readme",
   "bin": {
-    "code": "bin/brain-games.js"
-  }
+    "brain-games": "bin/brain-games.js"
+  },
+  "keywords": [
+    "q"
+  ]
 }
