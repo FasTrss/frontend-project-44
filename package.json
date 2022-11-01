@@ -19,12 +19,14 @@
   "homepage": "https://github.com/FasTrss/frontend-project-44#readme",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "keywords": [
     "q"
   ],
   "dependencies": {
+    "@hexlet/pairs": "^1.1.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
