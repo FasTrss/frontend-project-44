@@ -14,7 +14,6 @@ function userAnswer() {
     return answerIs;
 }
 
-export let task1;
 export function gameLogic(task, rightAnswer) { 
     for (let i = 0; i < 3; i += 1) {
         let task1 = 0;
