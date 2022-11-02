@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { toString } from "@hexlet/pairs";
 import { getRandomInt, gameLogic} from "../src/index.js"
 
 console.log('What is the result of the expression?');
@@ -25,8 +26,21 @@ const task = () => {
 
 const rightAnswer = (task1) => {
     const array = task1.split(" ");
-    const answer = eval(array[0] + array[1] + array[2]);
-    return answer;
+    let answer = 0;
+    const parsed = (a) => parseInt(a, 10);
+    switch (array[1]) {
+        case '+': 
+            answer = parsed(array[0]) + parsed(array[2]);
+            break;
+        case '-': 
+            answer = array[0] - array[2];
+            break;
+        case '*': 
+            answer = array[0] * array[2];
+            break;
+    }
+    return answer.toString(10);
+
 }
 
 gameLogic(task, rightAnswer);
