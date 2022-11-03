@@ -9,24 +9,28 @@ export function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+export function getRandomIntFromInterval(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function userAnswer() { 
     const answerIs = readlineSync.question('Your answer: ')
     return answerIs;
 }
 
-export function gameLogic(task, rightAnswer) { 
+export const gameLogic = ([question, rightAnswer]) => { 
     for (let i = 0; i < 3; i += 1) {
-        let task1 = 0;
-        task1 = task();
-        console.log('Question: ' + task1 )
+        console.log('Question: ' + question)
         const answer = userAnswer();
-        if (answer === rightAnswer(task1)) {
+        if (answer === rightAnswer) {
             console.log('Correct!');
             if (i === 2) {
                 console.log('Congratulations, '+ name + '!');
             }
         } else {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer(task1)}'.\n Let's try again, ${name}!`);
+            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\n Let's try again, ${name}!`);
             break;
     }
 }
