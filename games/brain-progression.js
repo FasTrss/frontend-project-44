@@ -13,7 +13,7 @@ export default function brainProgression() {
     let hiddenNumber = 0;
     for (let i = firstProgression; progression.length < lengthProgression; i += stepProgression) {
       progression.push(i);
-      if (progression.length - 1 === hiddenNumberIndex) {
+      if (progression.length - 2 === hiddenNumberIndex) {
         hiddenNumber = i;
         progression[hiddenNumberIndex] = '..';
       }
