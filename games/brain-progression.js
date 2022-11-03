@@ -8,7 +8,7 @@ export default function brainProgression() {
     const firstProgression = getRandomIntFromInterval(1, 20);
     const lengthProgression = getRandomIntFromInterval(5, 10);
     const stepProgression = getRandomIntFromInterval(2, 10);
-    const hiddenNumberIndex = getRandomIntFromInterval(1, lengthProgression);
+    const hiddenNumberIndex = getRandomIntFromInterval(1, lengthProgression - 1);
     const progression = [];
     let hiddenNumber = 0;
     for (let i = firstProgression; progression.length < lengthProgression; i += stepProgression) {
