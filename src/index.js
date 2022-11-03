@@ -20,8 +20,9 @@ function userAnswer() {
     return answerIs;
 }
 
-export const gameLogic = ([question, rightAnswer]) => { 
+export const gameLogic = (generateRound) => { 
     for (let i = 0; i < 3; i += 1) {
+        const [question, rightAnswer] = generateRound();
         console.log('Question: ' + question)
         const answer = userAnswer();
         if (answer === rightAnswer) {

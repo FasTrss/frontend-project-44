@@ -9,3 +9,5 @@ https://asciinema.org/a/MMjzemSuVnt3NT06adUBEInZl
 https://asciinema.org/a/ehxHE0vjcUcHawtYIYhAV2UiZ
 # asciinema brain-gcd:
 https://asciinema.org/a/XaEXiIe8HM0zQAVprdi8QCdBh
+# asciinema brain-progression:
+ https://asciinema.org/a/KqW99PRMLIcBahQKzUFzILITm
