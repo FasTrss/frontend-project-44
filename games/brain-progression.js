@@ -4,7 +4,6 @@ import { gameLogic, getRandomIntFromInterval } from '../src/index.js';
 
 export default function brainProgression() {
   console.log('What number is missing in the progression?');
-
   const getProgression = () => {
     const firstProgression = getRandomIntFromInterval(1, 20);
     const lengthProgression = getRandomIntFromInterval(5, 10);
