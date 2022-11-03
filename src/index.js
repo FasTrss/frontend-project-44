@@ -5,6 +5,17 @@ import sayHi from './cli.js';
 
 const name = sayHi();
 
+export const operators = [{
+  sign: '+',
+  method: function sum(int1, int2) { return int1 + int2; },
+}, {
+  sign: '-',
+  method: function substract(int1, int2) { return int1 - int2; },
+}, {
+  sign: '*',
+  method: function multiply(int1, int2) { return int1 * int2; },
+}];
+
 export function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
