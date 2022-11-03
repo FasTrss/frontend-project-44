@@ -5,7 +5,8 @@ import { getRandomInt, gameLogic} from "../src/index.js"
 export default function brain_calc() {
 console.log('What is the result of the expression?');
 
-const operators = [{
+const calc = () => { 
+    const operators = [{
     sign: "+",
     method: function(int1, int2){ return int1 + int2; }
 },{
@@ -16,16 +17,12 @@ const operators = [{
     method: function(int1, int2){ return int1 * int2; }
 }];
 
-const task = () => {
     const int1 = getRandomInt(25);
     const int2 = getRandomInt(20);
     const selectedOperator = Math.floor(Math.random()*operators.length);
-    const int = `${int1} ${operators[selectedOperator].sign} ${int2}`;   
-    return int;
-}
+    const question = `${int1} ${operators[selectedOperator].sign} ${int2}`;   
 
-const rightAnswer = (task1) => {
-    const array = task1.split(" ");
+    const array = question.split(" ");
     let answer = 0;
     const parsed = (a) => parseInt(a, 10);
     switch (array[1]) {
@@ -39,11 +36,12 @@ const rightAnswer = (task1) => {
             answer = array[0] * array[2];
             break;
     }
-    return answer.toString(10);
+    const rightAnswer = answer.toString(10);
 
+    return [question, rightAnswer];
 }
 
-gameLogic(task, rightAnswer);
+gameLogic(calc);
 
 }
 

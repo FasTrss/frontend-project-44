@@ -5,15 +5,12 @@ import { getRandomInt, gameLogic} from "../src/index.js"
 export function brain_gcd() {
 console.log('Find the greatest common divisor of given numbers');
 
-const task = () => {
+const gcd = () => {
     const int1 = getRandomInt(60);
     const int2 = getRandomInt(120);
-    const int = `${int1} ${int2}`;   
-    return int;
-}
+    const question = `${int1} ${int2}`;   
 
-const rightAnswer = (task1) => {
-    const array = task1.split(" ");
+    const array = question.split(" ");
     let answer = 0;
     const parsed = (a) => parseInt(a, 10);
     const num1 = parsed(array[0]);
@@ -26,8 +23,9 @@ const rightAnswer = (task1) => {
         break;
     }
     }
-    return answer.toString(10);
+    const rightAnswer = answer.toString();
+    return [question, rightAnswer];
 }
-gameLogic(task, rightAnswer);
+gameLogic(gcd);
 
 }
