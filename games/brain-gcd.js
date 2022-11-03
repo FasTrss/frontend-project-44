@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import { getRandomInt, gameLogic } from '../src/index.js';
+import { getRandomIntFromInterval, gameLogic } from '../src/index.js';
 
 export default function brainGcd() {
   console.log('Find the greatest common divisor of given numbers');
 
   const getGcd = () => {
-    const int1 = getRandomInt(60);
-    const int2 = getRandomInt(120);
+    const int1 = getRandomIntFromInterval(2, 60);
+    const int2 = getRandomIntFromInterval(2, 120);
     const question = `${int1} ${int2}`;
 
     const array = question.split(' ');
