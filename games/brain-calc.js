@@ -1,32 +1,17 @@
-#!/usr/bin/env node
+import {
+  getAnswer, getRandomInt, launchGame,
+} from '../src/index.js';
 
-import { operators, getRandomInt, gameLogic } from '../src/index.js';
+const description = 'What is the result of the expression?';
 
-export default function brainCalc() {
-  console.log('What is the result of the expression?');
-  const getCalc = () => {
-    const int1 = getRandomInt(25);
-    const int2 = getRandomInt(20);
-    const selectedOperator = Math.floor(Math.random() * operators.length);
-    const question = `${int1} ${operators[selectedOperator].sign} ${int2}`;
-    const array = question.split(' ');
-    let answer = 0;
-    const parsed = (a) => parseInt(a, 10);
-    switch (array[1]) {
-      case '+':
-        answer = parsed(array[0]) + parsed(array[2]);
-        break;
-      case '-':
-        answer = array[0] - array[2];
-        break;
-      case '*':
-        answer = array[0] * array[2];
-        break;
-      default:
-    }
-    const rightAnswer = answer.toString(10);
-    return [question, rightAnswer];
-  };
-
-  gameLogic(getCalc);
+export default function getCalc() {
+  const operators = ['+', '-', '*'];
+  const firstNumber = getRandomInt(25);
+  const secondNumber = getRandomInt(20);
+  const selectedOperator = operators[getRandomInt(3)];
+  const question = `${firstNumber} ${selectedOperator} ${secondNumber}`;
+  const answer = getAnswer(firstNumber, secondNumber, selectedOperator);
+  const rightAnswer = answer.toString();
+  return [question, rightAnswer];
 }
+launchGame(description, getCalc);

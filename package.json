@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/FasTrss/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/FasTrss/frontend-project-44/actions)",
+  "description": "Brain-games - 5 small math games consisting of 3 rounds",
   "type": "module",
   "main": "index.js",
   "scripts": {
