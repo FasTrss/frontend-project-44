@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { launchGame, getRandomIntFromInterval, makeProgression } from '../src/index.js';
+import { launchGame, getRandomIntFromInterval, makeProgression } from '../index.js';
 
 const description = 'What number is missing in the progression?';
 

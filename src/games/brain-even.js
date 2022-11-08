@@ -1,4 +1,4 @@
-import { isEven, getRandomInt, launchGame } from '../src/index.js';
+import { isEven, getRandomInt, launchGame } from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 export default function getEven() {

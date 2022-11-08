@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { launchGame, getRandomIntFromInterval, isPrime } from '../src/index.js';
+import { launchGame, getRandomIntFromInterval, isPrime } from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 export default function getPrime() {

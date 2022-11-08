@@ -1,6 +1,6 @@
 import {
   getAnswer, getRandomInt, launchGame,
-} from '../src/index.js';
+} from '../index.js';
 
 const description = 'What is the result of the expression?';
 

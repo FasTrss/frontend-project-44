@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getLargsetGCD, getRandomIntFromInterval, launchGame } from '../src/index.js';
+import { getLargsetGCD, getRandomIntFromInterval, launchGame } from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers';
 export default function getGCD() {
