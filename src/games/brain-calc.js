@@ -29,6 +29,5 @@ const runCalc = () => {
   const answer = getAnswer(firstNumber, secondNumber, selectedOperator);
   return [question, answer.toString()];
 };
-launchGame(description, runCalc);
 
 export default runCalc;
