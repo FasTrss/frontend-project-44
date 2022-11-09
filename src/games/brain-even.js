@@ -1,9 +1,13 @@
-import { isEven, getRandomInt, launchGame } from '../index.js';
+import { getRandomInt } from '../index.js';
 
-const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-export default function getEven() {
-  const randomNumber = getRandomInt(50);
-  const rightAnswer = isEven(randomNumber);
+const isEven = (a) => a % 2 === 0;
+const interval = 50;
+export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const runEven = () => {
+  const randomNumber = getRandomInt(interval);
+  const rightAnswer = (isEven(randomNumber) ? 'yes' : 'no');
   return [randomNumber, rightAnswer];
-}
-launchGame(description, getEven);
+};
+
+export default runEven;

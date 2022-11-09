@@ -1,20 +1,42 @@
 #!/usr/bin/env node
 
-import { launchGame, getRandomIntFromInterval, makeProgression } from '../index.js';
+import { getRandomIntFromInterval, getRandomInt } from '../index.js';
 
-const description = 'What number is missing in the progression?';
+const makeProgression = (
+  firstProgression,
+  stepProgression,
+  lengthProgression,
+) => {
+  const progression = [];
+  for (let i = firstProgression; progression.length < lengthProgression; i += stepProgression) {
+    progression.push(i);
+  }
+  return progression;
+};
 
-export default function getProgression() {
-  const firstProgression = getRandomIntFromInterval(1, 20);
-  const lengthProgression = getRandomIntFromInterval(5, 10);
-  const stepProgression = getRandomIntFromInterval(2, 10);
-  const hiddenNumberIndex = getRandomIntFromInterval(1, lengthProgression - 1);
-  const [question, rightAnswer] = makeProgression(
+export const description = 'What number is missing in the progression?';
+const intervalOfFirstNum = 20;
+const beginOfTheStepInterval = 2;
+const endOfTheStepInterval = 10;
+const beginOfTheLengthInterval = 5;
+const endOfTheLengthInterval = 10;
+
+const runProgression = () => {
+  const firstProgression = getRandomInt(intervalOfFirstNum);
+  const lengthProgression = getRandomIntFromInterval(
+    beginOfTheLengthInterval,
+    endOfTheLengthInterval,
+  );
+  const stepProgression = getRandomIntFromInterval(beginOfTheStepInterval, endOfTheStepInterval);
+  const hiddenNumberIndex = getRandomInt(lengthProgression - 1);
+  const progression = makeProgression(
     firstProgression,
     stepProgression,
     lengthProgression,
-    hiddenNumberIndex,
   );
-  return [question, String(rightAnswer)];
-}
-launchGame(description, getProgression);
+  const hiddenNumber = progression[hiddenNumberIndex];
+  progression[hiddenNumberIndex] = '..';
+  return [progression.join(' '), hiddenNumber.toString()];
+};
+
+export default runProgression;

@@ -1,17 +1,34 @@
-import {
-  getAnswer, getRandomInt, launchGame,
-} from '../index.js';
+import { getRandomInt, launchGame } from '../index.js';
 
-const description = 'What is the result of the expression?';
+const getAnswer = (firstInt, secondInt, operator) => {
+  let answer = 0;
+  switch (operator) {
+    case '+':
+      answer = firstInt + secondInt;
+      return answer;
+    case '-':
+      answer = firstInt - secondInt;
+      return answer;
+    case '*':
+      answer = firstInt * secondInt;
+      return answer;
+    default:
+  }
+  return answer;
+};
 
-export default function getCalc() {
-  const operators = ['+', '-', '*'];
-  const firstNumber = getRandomInt(25);
-  const secondNumber = getRandomInt(20);
-  const selectedOperator = operators[getRandomInt(3)];
+export const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
+const interval = 25;
+
+const runCalc = () => {
+  const firstNumber = getRandomInt(interval);
+  const secondNumber = getRandomInt(interval);
+  const selectedOperator = operators[getRandomInt(operators.length)];
   const question = `${firstNumber} ${selectedOperator} ${secondNumber}`;
   const answer = getAnswer(firstNumber, secondNumber, selectedOperator);
-  const rightAnswer = answer.toString();
-  return [question, rightAnswer];
-}
-launchGame(description, getCalc);
+  return [question, answer.toString()];
+};
+launchGame(description, runCalc);
+
+export default runCalc;
