@@ -1,4 +1,4 @@
-import { getRandomInt, launchGame } from '../index.js';
+import { getRandomInt } from '../index.js';
 
 const getAnswer = (firstInt, secondInt, operator) => {
   let answer = 0;
