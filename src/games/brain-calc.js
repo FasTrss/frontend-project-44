@@ -13,8 +13,8 @@ const getAnswer = (firstInt, secondInt, operator) => {
       answer = firstInt * secondInt;
       return answer;
     default:
+      throw new Error('Invalid Operator!');
   }
-  return answer;
 };
 
 export const description = 'What is the result of the expression?';
