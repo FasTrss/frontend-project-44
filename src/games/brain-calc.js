@@ -1,17 +1,14 @@
-import { getRandomInt } from '../index.js';
+import launchGame from '../index.js';
+import { getRandomInt } from '../utilities.js';
 
-const getAnswer = (firstInt, secondInt, operator) => {
-  let answer = 0;
+const calculate = (firstInt, secondInt, operator) => {
   switch (operator) {
     case '+':
-      answer = firstInt + secondInt;
-      return answer;
+      return firstInt + secondInt;
     case '-':
-      answer = firstInt - secondInt;
-      return answer;
+      return firstInt - secondInt;
     case '*':
-      answer = firstInt * secondInt;
-      return answer;
+      return firstInt * secondInt;
     default:
       throw new Error('Invalid Operator!');
   }
@@ -26,8 +23,10 @@ const runCalc = () => {
   const secondNumber = getRandomInt(interval);
   const selectedOperator = operators[getRandomInt(operators.length)];
   const question = `${firstNumber} ${selectedOperator} ${secondNumber}`;
-  const answer = getAnswer(firstNumber, secondNumber, selectedOperator);
+  const answer = calculate(firstNumber, secondNumber, selectedOperator);
   return [question, answer.toString()];
 };
+
+launchGame(description, runCalc);
 
 export default runCalc;

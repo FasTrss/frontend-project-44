@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { getRandomIntFromInterval } from '../index.js';
+import launchGame from '../index.js';
+import { getRandomIntFromInterval } from '../utilities.js';
 
 const isPrime = (num) => {
   if (num === 1) {
@@ -26,5 +27,7 @@ const runPrime = () => {
   const rightAnswer = (isPrime(randomNumber) ? 'yes' : 'no');
   return [randomNumber, rightAnswer];
 };
+
+launchGame(description, runPrime);
 
 export default runPrime;

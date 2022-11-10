@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 
-import { getRandomIntFromInterval } from '../index.js';
+import launchGame from '../index.js';
+import { getRandomIntFromInterval } from '../utilities.js';
 
 const getLargsetGCD = (int1, int2) => {
-  let answer = 0;
   const min = Math.min(int1, int2);
   for (let i = min; i > 0; i -= 1) {
     if (int1 % i === 0 && int2 % i === 0) {
-      answer = i;
       return i;
     }
   }
-  return answer;
+  return 1;
 };
 
 export const description = 'Find the greatest common divisor of given numbers';
@@ -25,5 +24,7 @@ const runGCD = () => {
   const answer = getLargsetGCD(firstNumber, secondNumber);
   return [question, answer.toString()];
 };
+
+launchGame(description, runGCD);
 
 export default runGCD;

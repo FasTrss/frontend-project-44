@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { getRandomIntFromInterval, getRandomInt } from '../index.js';
+import launchGame from '../index.js';
+import { getRandomInt, getRandomIntFromInterval } from '../utilities.js';
 
 const makeProgression = (
   firstProgression,
@@ -38,5 +39,7 @@ const runProgression = () => {
   progression[hiddenNumberIndex] = '..';
   return [progression.join(' '), hiddenNumber.toString()];
 };
+
+launchGame(description, runProgression);
 
 export default runProgression;
