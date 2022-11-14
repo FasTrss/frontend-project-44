@@ -18,7 +18,7 @@ const intervalOfFirstNum = 20;
 const beginOfTheStepInterval = 2;
 const endOfTheStepInterval = 10;
 const beginOfTheLengthInterval = 5;
-const endOfTheLengthInterval = 10;
+const endOfTheLengthInterval = 12;
 
 const generateProgression = () => {
   const firstProgression = getRandomInt(intervalOfFirstNum);
@@ -38,6 +38,4 @@ const generateProgression = () => {
   return [progression.join(' '), hiddenNumber.toString()];
 };
 
-launchGame(description, generateProgression);
-
-export default generateProgression;
+export default () => launchGame(description, generateProgression);
