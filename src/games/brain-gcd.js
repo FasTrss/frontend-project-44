@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import launchGame from '../index.js';
 import { getRandomIntFromInterval } from '../utilities.js';
 
@@ -13,11 +11,11 @@ const getLargsetGCD = (int1, int2) => {
   return 1;
 };
 
-export const description = 'Find the greatest common divisor of given numbers';
+const description = 'Find the greatest common divisor of given numbers';
 const beginOfTheInterval = 2;
 const endOfTheInterval1 = 30;
 const endOfTheInterval2 = 60;
-const runGCD = () => {
+const generateGCD = () => {
   const firstNumber = getRandomIntFromInterval(beginOfTheInterval, endOfTheInterval1);
   const secondNumber = getRandomIntFromInterval(beginOfTheInterval, endOfTheInterval2);
   const question = `${firstNumber} ${secondNumber}`;
@@ -25,6 +23,4 @@ const runGCD = () => {
   return [question, answer.toString()];
 };
 
-launchGame(description, runGCD);
-
-export default runGCD;
+export default () => launchGame(description, generateGCD);

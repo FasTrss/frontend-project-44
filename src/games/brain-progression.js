@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import launchGame from '../index.js';
 import { getRandomInt, getRandomIntFromInterval } from '../utilities.js';
 
@@ -15,14 +13,14 @@ const makeProgression = (
   return progression;
 };
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 const intervalOfFirstNum = 20;
 const beginOfTheStepInterval = 2;
 const endOfTheStepInterval = 10;
 const beginOfTheLengthInterval = 5;
 const endOfTheLengthInterval = 10;
 
-const runProgression = () => {
+const generateProgression = () => {
   const firstProgression = getRandomInt(intervalOfFirstNum);
   const lengthProgression = getRandomIntFromInterval(
     beginOfTheLengthInterval,
@@ -40,6 +38,6 @@ const runProgression = () => {
   return [progression.join(' '), hiddenNumber.toString()];
 };
 
-launchGame(description, runProgression);
+launchGame(description, generateProgression);
 
-export default runProgression;
+export default generateProgression;

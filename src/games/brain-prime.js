@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import launchGame from '../index.js';
 import { getRandomIntFromInterval } from '../utilities.js';
 
@@ -19,15 +17,13 @@ const isPrime = (num) => {
   return true;
 };
 
-export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const beginOfTheInterval = 2;
 const endOfTheInterval = 50;
-const runPrime = () => {
+const generatePrime = () => {
   const randomNumber = getRandomIntFromInterval(beginOfTheInterval, endOfTheInterval);
   const rightAnswer = (isPrime(randomNumber) ? 'yes' : 'no');
   return [randomNumber, rightAnswer];
 };
 
-launchGame(description, runPrime);
-
-export default runPrime;
+export default () => launchGame(description, generatePrime);

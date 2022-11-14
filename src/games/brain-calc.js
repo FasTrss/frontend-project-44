@@ -14,11 +14,11 @@ const calculate = (firstInt, secondInt, operator) => {
   }
 };
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 const interval = 25;
 
-const runCalc = () => {
+const generateCalc = () => {
   const firstNumber = getRandomInt(interval);
   const secondNumber = getRandomInt(interval);
   const selectedOperator = operators[getRandomInt(operators.length)];
@@ -27,6 +27,4 @@ const runCalc = () => {
   return [question, answer.toString()];
 };
 
-launchGame(description, runCalc);
-
-export default runCalc;
+export default () => launchGame(description, generateCalc);
